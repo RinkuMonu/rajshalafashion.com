@@ -4,6 +4,7 @@ import { FaInstagram, FaPinterestP } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { PiCoatHangerDuotone } from "react-icons/pi";
+import { FiPhone } from "react-icons/fi";
 
 export default function Footer() {
 
@@ -81,7 +82,7 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
         <div>
-          <img src="/home/verily-footer.png" alt="footer-Logo" className="h-16  mb-4" />
+          <img src="/home/rajshala-logo.png" alt="footer-Logo" className="h-24 bg-gray-100 p-3 rounded-md mb-4" />
           <p className="text-sm leading-relaxed text-gray-300 mt-5">
             Premium men’s wear crafted for style, comfort, and confidence. Every outfit is designed to elevate your everyday look.
           </p>
@@ -101,27 +102,42 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-white font-semibold text-lg mb-4 relative after:absolute after:left-0 after:-bottom-1 after:w-10 after:h-[2px] after:bg-[#cba146]">Contact</h3>
+          <h3 className="text-white font-semibold text-lg mb-4 relative after:absolute after:left-0 after:-bottom-1 after:w-10 after:h-[2px] after:bg-[#cba146]">Visit Us On</h3>
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="hover:text-[#cba146] transition flex items-start gap-2">
               📍
               <div className="leading-snug">
-              Plot No. 417, Near Vishal Mega Mart, Gurgaon Road, Sector 20, Gurugram, Haryana - 122016
+              Plot No. 221-A, S.N. 3, Ground Floor, Kalwar Road, Sanjay Nagar-A, Jhotwara, Jaipur, Rajasthan – 302012, India
               </div>
             </li>
 
-            <li>
-              <Link to="mailto:info@verilyuniquefashion.com" className="hover:text-[#cba146] transition flex items-center gap-2 pt-4">
-                ✉️ info@verilyuniquefashion.com
-              </Link>
-            </li>
+           
           </ul>
         </div>
 
         <div>
-          <h3 className="text-white font-semibold text-lg mb-4 relative after:absolute after:left-0 after:-bottom-1 after:w-10 after:h-[2px] after:bg-[#cba146]">Follow Us</h3>
+          <h3 className="text-white font-semibold text-lg mb-4 relative after:absolute after:left-0 after:-bottom-1 after:w-10 after:h-[2px] after:bg-[#cba146]">Contact</h3>
           <div className="flex items-center gap-4">
-            <Link
+
+<ul>
+   <li>
+              <Link to="mailto:info@rajshalafashion.com" className="hover:text-[#cba146] transition flex items-center gap-2 pt-4">
+                ✉️ info@rajshalafashion.com
+              </Link>
+            </li>
+             <li>
+             <Link
+  to="tel:+917733993784"
+  className="hover:text-[#cba146] transition flex items-center gap-2 pt-4"
+>
+  <FiPhone /> +91 7733993784
+</Link>
+            </li>
+</ul>
+
+
+
+            {/* <Link
               to="https://www.instagram.com/verilyuniquefashion/"
               target="_blank"
               rel="noopener noreferrer"
@@ -155,7 +171,7 @@ export default function Footer() {
               className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#cba146] hover:text-black transition"
             >
            <FaFacebookF />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
@@ -199,7 +215,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="relative z-10 border-t border-white/10 text-center py-4 text-sm text-gray-400">
-        © {new Date().getFullYear()} Verily Unique Private Limited. All rights reserved.
+        © {new Date().getFullYear()} Rajshala Fashion Private Limited. All rights reserved.
       </div>
     </footer>
   );

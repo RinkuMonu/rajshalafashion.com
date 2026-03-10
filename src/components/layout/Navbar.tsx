@@ -699,9 +699,9 @@ const Navbar: React.FC<NavbarProps> = ({ onCartClick, cartItemCount }) => {
             <Link to="/" className="flex items-center relative group">
               <div className="relative" style={{ borderColor: primaryColor }}>
                 <img
-                  src="/home/main-logo-img.png"
+                  src="/home/rajshala-logo.png"
                   alt="/"
-                  className="transition-all duration-300 w-28 sm:w-16 md:w-36 rounded-lg"
+                  className="transition-all duration-300 sm:w-16 md:w-24 rounded-lg"
                 />
               </div>
             </Link>
