@@ -106,7 +106,7 @@ export default function TermsOfService() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extrabold text-[#393838] mb-4">Terms of Service</h1>
         <p className="text-md text-gray-600">
-          Please read our terms carefully before using Jajam Block Print services.
+          Please read our terms carefully before using Rajshala Fashion services.
         </p>
       </div>
 

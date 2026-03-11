@@ -37,7 +37,7 @@ export default function AboutUs() {
           <div className="relative w-full h-[300px] rounded-2xl overflow-hidden shadow-xl">
             <img
               src="/about/about1.jpg"
-              alt="Jajam Block Prints modern designs"
+              alt="Rajshala Fashions modern designs"
               className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
