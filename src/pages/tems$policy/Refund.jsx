@@ -74,7 +74,7 @@ If the order has already shipped, it may be returned according to our Return Pro
   <p className="text-justify text-gray-700 leading-relaxed">
     • Minor color variations are not a valid reason for return/exchange, as shades may differ due to lighting and screen settings <br/ >
     • Items that have been exchanged cannot be returned for a refund  <br/ >
-    • This policy applies only to purchases made from our official website <a href="verilyuniquefashion.com">verilyuniquefashion.com</a>
+    • This policy applies only to purchases made from our official website <a href="info@rajshalafashion.com">rajshalafashion.com</a>
   </p>
 </div>
 
