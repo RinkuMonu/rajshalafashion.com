@@ -46,7 +46,7 @@ const termsSections = [
     {
       title: "Introduction to Rajshala Fashion",
       content: [
-        "Welcome to “Rajshala Fashion”. The domain name www.Jajamblockprint.com (hereinafter referred to as the \"Website\") is registered in proprietorship firm incorporated under the laws of India.",
+        "Welcome to “Rajshala Fashion”. The domain name www.rajfashion.com (hereinafter referred to as the \"Website\") is registered in proprietorship firm incorporated under the laws of India.",
         "If you use any of the services of the Website, its features and tools, you will be subject to the guidelines, terms and agreements applicable to the Website. By the mere use of the Website, you shall be contracting with “Rajshala Fashion”. These terms and conditions constitute binding obligations between you and us.",
         "All products /services and information displayed on the Website constitute an \"invitation to offer\". Your order for purchase constitutes your \"offer\", which shall be subject to the terms and conditions as listed below. We reserve the right to accept or reject your offer. Our acceptance of your order will take place upon dispatch of the product(s) ordered. No act or omission of “Rajshala Fashion” prior to the actual dispatch of the product(s) ordered will constitute acceptance of your offer."
       ]
@@ -54,7 +54,7 @@ const termsSections = [
     {
       title: "Services Offered",
       content: [
-        "www.Jajamblockprint.com is an online website to provide Running Materials or Clothing Materials which can be further customize as per the requirement of the end user. Users can make a purchase from the website. Upon placing an order, we shall ship the product to you and be entitled to its payment for the services."
+        "www.rajfashion.com is an online website to provide Running Materials or Clothing Materials which can be further customize as per the requirement of the end user. Users can make a purchase from the website. Upon placing an order, we shall ship the product to you and be entitled to its payment for the services."
       ]
     },
     {
@@ -67,7 +67,7 @@ const termsSections = [
     {
       title: "Pricing",
       content: [
-        "Prices for products are described on our Website and are incorporated into these Terms by reference. All prices are in Indian rupees which can be change in different currencies. Prices, products and Services may change at www.Jajamblockprint.com discretion.",
+        "Prices for products are described on our Website and are incorporated into these Terms by reference. All prices are in Indian rupees which can be change in different currencies. Prices, products and Services may change at www.rajfashion.com discretion.",
         "Please note that the payment may be processed prior to the dispatch of the product that you have ordered. If we have to cancel the order after we have processed the payment, the said amount will be reversed back to the account from which you had made payments in respect of the order."
       ]
     },
