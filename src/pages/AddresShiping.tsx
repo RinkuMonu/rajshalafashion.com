@@ -695,9 +695,9 @@ useEffect(() => {
                 {/* Logo */}
                 <div className="mb-6">
                   <img
-                    src="/home/main-logo-img.png"
+                    src="/home/rajshala-logo.png"
                     alt="logo"
-                    className="w-52 h-auto"
+                    className="w-28 h-auto"
                   />
                 </div>
 

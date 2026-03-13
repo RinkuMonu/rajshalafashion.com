@@ -52,7 +52,7 @@ export default function TopCategories() {
           <div className="inline-flex items-center justify-center mb-1">
             <span className="text-sm font-semibold py-3 underline inline-flex items-center gap-2">
               <Sparkles className="w-4 h-4" />
-              Heritage Collections
+              Exclusive Collections
               <Sparkles className="w-4 h-4" />
             </span>
           </div>

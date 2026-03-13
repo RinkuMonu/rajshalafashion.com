@@ -104,15 +104,26 @@ const DealOfTheDay = ({ addToCart }: { addToCart: (product: Product) => void }) 
   }, [products]);
 
   // Filter only deal of the day products
-  const dealProducts = useMemo(() => {
-    return products
-      .filter(product => product.dealOfTheDay)
-      .map((product) => ({
-        ...product,
-        rating: Math.floor(Math.random() * 5) + 1,
-        reviewCount: Math.floor(Math.random() * (100 - 25 + 1)) + 25,
-      }));
-  }, [products]);
+const dealProducts = useMemo(() => {
+  const now = new Date().getTime();
+
+  return products
+    .filter(product => {
+      if (!product.dealOfTheDay) return false;
+
+      if (product.dealExpiresAt) {
+        const expiry = new Date(product.dealExpiresAt).getTime();
+        return expiry > now;
+      }
+
+      return true;
+    })
+    .map((product) => ({
+      ...product,
+      rating: Math.floor(Math.random() * 5) + 1,
+      reviewCount: Math.floor(Math.random() * (100 - 25 + 1)) + 25,
+    }));
+}, [products]);
 
   // Responsive items per slide
   useEffect(() => {
@@ -553,16 +564,16 @@ if (dealProducts.length === 0) {
                                 {/* Price */}
                                 <div className="flex items-center justify-between">
                                   <div className="flex items-center space-x-2">
-                                    <span
-                                      className="text-xl font-bold"
-                                      style={{ color: "#cba146" }}
-                                    >
-                                      ₹{product.actualPrice}
-                                    </span>
+                                   <span
+  className="text-xl font-bold"
+  style={{ color: "#cba146" }}
+>
+  ₹{Math.round(product.actualPrice)}
+</span>
                                     {product.price &&
                                       product.price !== product.actualPrice && (
                                         <span className="text-sm text-gray-400 line-through">
-                                          ₹{product.price}
+                                        ₹{Math.round(product.price)}
                                         </span>
                                       )}
                                   </div>
