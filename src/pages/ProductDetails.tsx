@@ -31,17 +31,20 @@ interface Product {
   price: number;
   discount: number;
   material: string; // Add kiya
-  stock: number;    // Add kiya
-  brand: {          // Response ke according update
+  stock: number; // Add kiya
+  brand: {
+    // Response ke according update
     _id: string;
     name: string;
     logo: string;
   };
-  category: {       // Response ke according update
+  category: {
+    // Response ke according update
     _id: string;
     name: string;
   };
-  size: {           // Response mein size array of objects hai
+  size: {
+    // Response mein size array of objects hai
     _id: string;
     sizes: string;
     price: number;
@@ -52,7 +55,6 @@ interface Product {
 interface ProductDetailsProps {
   addToCart: (product: Product) => void;
 }
-
 
 interface SizeOption {
   _id: string;
@@ -71,7 +73,6 @@ interface Review {
   };
 }
 
-
 const ProductDetails = ({ addToCart }: ProductDetailsProps) => {
   // const location = useLocation();
   // const rating = location.state?.rating || 4;
@@ -81,7 +82,7 @@ const ProductDetails = ({ addToCart }: ProductDetailsProps) => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<"description" | "reviews">(
-    "description"
+    "description",
   );
   console.log("active tabs = ", activeTab);
   const [mainImage, setMainImage] = useState<string>(""); // Re-introducing mainImage state
@@ -106,7 +107,7 @@ const ProductDetails = ({ addToCart }: ProductDetailsProps) => {
   // const [gettoken, settoken] = useState(null);
 
   const [review, setReview] = useState<Review[] | null>(null);
-const [gettoken, settoken] = useState<string | null>(null);
+  const [gettoken, settoken] = useState<string | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -125,21 +126,21 @@ const [gettoken, settoken] = useState<string | null>(null);
     if (id) {
       fetchReview();
     }
-  }, [id, isRatingModalOpen, baseUrl ]);
+  }, [id, isRatingModalOpen, baseUrl]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         // All Products
         const res = await fetch(
-          `${baseUrl}/product/getproducts?referenceWebsite=${referenceWebsite}`
+          `${baseUrl}/product/getproducts?referenceWebsite=${referenceWebsite}`,
         );
         const allData = await res.json();
         setAllProducts(allData.products);
 
         // Single Product
         const response = await fetch(
-          `${baseUrl}/product/getproduct/${id}?referenceWebsite=${referenceWebsite}`
+          `${baseUrl}/product/getproduct/${id}?referenceWebsite=${referenceWebsite}`,
         );
         const singleData = await response.json();
         setProduct(singleData.product);
@@ -212,11 +213,8 @@ const [gettoken, settoken] = useState<string | null>(null);
   //   }
   // };
 
-
-
   // const handleAddToCart = (product: any) => {
   const handleAddToCart = (product: Product) => {
-
     const token = localStorage.getItem("token");
 
     const cartItem = {
@@ -227,13 +225,13 @@ const [gettoken, settoken] = useState<string | null>(null);
       // YAHAN CHANGE KAREIN: selectedSize ki price pehle bhejni hai
       price: selectedSize?.price || product.actualPrice || product.price,
       quantity,
-      size: selectedSize?.sizes || "Standard" // Extra: size info bhi add kar sakte hain
+      size: selectedSize?.sizes || "Standard", // Extra: size info bhi add kar sakte hain
     };
 
     if (!token) {
       // Get existing cart or initialize empty array
       const existingCart = JSON.parse(
-        localStorage.getItem("addtocart") || "[]"
+        localStorage.getItem("addtocart") || "[]",
       );
 
       // Check if product already in cart
@@ -242,9 +240,8 @@ const [gettoken, settoken] = useState<string | null>(null);
       // );
 
       const existingProductIndex = existingCart.findIndex(
-  (item: { id: string; quantity: number }) => item.id === product._id
-);
-
+        (item: { id: string; quantity: number }) => item.id === product._id,
+      );
 
       if (existingProductIndex !== -1) {
         // Product exists – increase quantity
@@ -292,21 +289,22 @@ const [gettoken, settoken] = useState<string | null>(null);
       <Star
         key={i}
         size={16}
-        className={`${i < Math.floor(rating)
-          ? "fill-yellow-400 stroke-yellow-400"
-          : "stroke-gray-300"
-          }`}
+        className={`${
+          i < Math.floor(rating)
+            ? "fill-yellow-400 stroke-yellow-400"
+            : "stroke-gray-300"
+        }`}
       />
     ));
   };
 
   let relatedProductsFiltered = allProducts.filter(
-    (p) => p._id !== id && p.category?._id === product?.category?._id
+    (p) => p._id !== id && p.category?._id === product?.category?._id,
   );
   if (relatedProductsFiltered.length < 4) {
     const otherProducts = allProducts.filter(
       (p) =>
-        p._id !== id && !relatedProductsFiltered.some((rp) => rp._id === p._id)
+        p._id !== id && !relatedProductsFiltered.some((rp) => rp._id === p._id),
     );
     relatedProductsFiltered = [
       ...relatedProductsFiltered,
@@ -347,10 +345,11 @@ const [gettoken, settoken] = useState<string | null>(null);
                   key={index}
                   src={fullUrl}
                   alt={`Thumbnail ${index + 1}`}
-                  className={`w-24 h-24 object-cover rounded-xl cursor-pointer border-3 transition-all duration-300 transform hover:scale-105 ${mainImage === img
-                    ? "border-[#cba146] shadow-lg"
-                    : "border-gray-200 hover:border-purple-300"
-                    }`}
+                  className={`w-24 h-24 object-cover rounded-xl cursor-pointer border-3 transition-all duration-300 transform hover:scale-105 ${
+                    mainImage === img
+                      ? "border-[#cba146] shadow-lg"
+                      : "border-gray-200 hover:border-purple-300"
+                  }`}
                   onClick={() => setMainImage(img)}
                 />
               );
@@ -385,22 +384,19 @@ const [gettoken, settoken] = useState<string | null>(null);
 
           <div className="flex items-baseline mb-8">
             {/* Selected size price OR fallback to actual price */}
-            <span
-              className="text-5xl font-bold mr-4"
-              style={{ color: "#cba146" }}
-            >
-              {/* ₹{selectedSize?.price || product?.actualPrice} */}
-              {/* ₹{product?.actualPrice} */}
-              ₹{selectedSize?.price || product?.actualPrice}
-            </span>
+          <span
+  className="text-5xl font-bold mr-4"
+  style={{ color: "#cba146" }}
+>
+  ₹{Math.round(selectedSize?.actualPrice || product?.actualPrice)}
+</span>
 
-            {/* Show strikethrough price only if there's a difference */}
-            {product?.price && product.actualPrice < product.price && (
-              <span className="text-2xl text-gray-500 line-through">
-                ₹{product?.price}
-              </span>
-            )}
-
+{/* Show strikethrough price only if there's a difference */}
+{product?.price && product.actualPrice < product.price && (
+  <span className="text-2xl text-gray-500 line-through">
+    ₹{Math.round(product?.price)}
+  </span>
+)}
 
             {/* Show discount badge */}
             {product?.discount && (
@@ -423,9 +419,10 @@ const [gettoken, settoken] = useState<string | null>(null);
                       key={s._id}
                       onClick={() => setSelectedSize(s)}
                       className={`px-4 py-2 rounded-full border text-sm font-semibold transition-all
-                        ${selectedSize?._id === s._id  // <- Ye line match honi chahiye
-                          ? "bg-black text-white border-black" 
-                          : "bg-white text-black border-gray-400 hover:border-black"
+                        ${
+                          selectedSize?._id === s._id // <- Ye line match honi chahiye
+                            ? "bg-black text-white border-black"
+                            : "bg-white text-black border-gray-400 hover:border-black"
                         }`}
                     >
                       {s.sizes}
@@ -455,8 +452,9 @@ const [gettoken, settoken] = useState<string | null>(null);
             <div>
               <span className="font-semibold">Availability:</span>{" "}
               <span
-                className={`font-medium ${product?.stock <= 0 ? "text-red-600" : "text-green-600"
-                  }`}
+                className={`font-medium ${
+                  product?.stock <= 0 ? "text-red-600" : "text-green-600"
+                }`}
               >
                 {product?.stock <= 0 ? "Out Of Stock" : "In stock"}
               </span>
@@ -495,8 +493,9 @@ const [gettoken, settoken] = useState<string | null>(null);
             <button
               onClick={() => handleAddToCart(product)}
               disabled={product.stock <= 0}
-              className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 text-white font-bold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-sm ${product?.stock <= 0 && "cursor-not-allowed opacity-50"
-                } `} // Smaller buttons
+              className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 text-white font-bold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] text-sm ${
+                product?.stock <= 0 && "cursor-not-allowed opacity-50"
+              } `} // Smaller buttons
               style={{ background: "#cba146" }}
             >
               <ShoppingCart size={20} /> Add to Cart
@@ -504,8 +503,9 @@ const [gettoken, settoken] = useState<string | null>(null);
             <button
               onClick={handleBuyNow}
               disabled={product.stock <= 0}
-              className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 text-white font-bold rounded-full shadow-lg transition-all duration-300 hover:bg-gray-900 hover:shadow-xl hover:scale-[1.02] text-sm ${product?.stock <= 0 && "cursor-not-allowed opacity-50"
-                }`} // Smaller buttons
+              className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 text-white font-bold rounded-full shadow-lg transition-all duration-300 hover:bg-gray-900 hover:shadow-xl hover:scale-[1.02] text-sm ${
+                product?.stock <= 0 && "cursor-not-allowed opacity-50"
+              }`} // Smaller buttons
             >
               Buy Now
             </button>
@@ -587,10 +587,11 @@ const [gettoken, settoken] = useState<string | null>(null);
           {/* Button for Description Tab */}
           <button
             onClick={() => setActiveTab("description")}
-            className={`px-10 py-4 text-xl font-bold transition-all duration-300 w-full sm:w-auto ${activeTab === "description"
-              ? "border-b-4 border-[#cba146] text-[#cba146]"
-              : "text-gray-700 hover:text-[#cba146]"
-              }`}
+            className={`px-10 py-4 text-xl font-bold transition-all duration-300 w-full sm:w-auto ${
+              activeTab === "description"
+                ? "border-b-4 border-[#cba146] text-[#cba146]"
+                : "text-gray-700 hover:text-[#cba146]"
+            }`}
             style={{
               borderColor: activeTab === "description" ? "#cba146" : "",
             }}
@@ -602,10 +603,11 @@ const [gettoken, settoken] = useState<string | null>(null);
           <div className=" flex justify-between gap-6 ">
             <button
               onClick={() => setActiveTab("reviews")}
-              className={`px-10 py-4 text-xl font-bold transition-all duration-300 w-full sm:w-auto ${activeTab === "reviews"
-                ? "border-b-4 border-[#cba146] text-[#cba146]"
-                : "text-gray-700 hover:text-[#cba146]"
-                }`}
+              className={`px-10 py-4 text-xl font-bold transition-all duration-300 w-full sm:w-auto ${
+                activeTab === "reviews"
+                  ? "border-b-4 border-[#cba146] text-[#cba146]"
+                  : "text-gray-700 hover:text-[#cba146]"
+              }`}
               style={{
                 borderColor: activeTab === "reviews" ? "#cba146" : "",
               }}
@@ -667,7 +669,6 @@ const [gettoken, settoken] = useState<string | null>(null);
                 <div className="space-y-8">
                   {/* {review?.map((review) => ( */}
                   {review?.map((review: Review) => (
-
                     <div
                       key={review.id}
                       className="border-b pb-6 last:border-b-0 last:pb-0"
