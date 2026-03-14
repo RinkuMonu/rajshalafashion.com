@@ -1003,7 +1003,7 @@ const Navbar: React.FC<NavbarProps> = ({ onCartClick, cartItemCount }) => {
         Track Pants
       </Link>
        <Link
-        to="/category/track-pants-and-joggers"
+        to="/category/shorts"
         className="text-[13px] font-semibold transition-all duration-300 hover:text-[#cba146] text-[#1B2E4F]"
       >
         Shorts & Necker
