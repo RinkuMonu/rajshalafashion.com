@@ -289,10 +289,10 @@ export default function CategoryPage() {
               onChange={(e) => setSortBy(e.target.value)}
               className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#cba146] focus:border-[#cba146] bg-white"
             >
-              <option value="newest">Newest First</option>
-              <option value="oldest">Oldest First</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Latest Products</option>
+              <option value="oldest">Earlier Products</option>
+              <option value="price-low">Price: Lowest to Highest</option>
+              <option value="price-high">Price: Highest to Lowest</option>
             </select>
           </div>
 
