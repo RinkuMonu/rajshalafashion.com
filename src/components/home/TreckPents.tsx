@@ -185,7 +185,7 @@ export default function TreckPents() {
 
     <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1 inline-block mb-1">
       <p className="text-white text-sm sm:text-base lg:text-lg font-bold drop-shadow-lg">
-        ₹{product.actualPrice}
+      ₹{Math.round(product.actualPrice)}
       </p>
     </div>
 

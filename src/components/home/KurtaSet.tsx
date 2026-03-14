@@ -172,7 +172,7 @@ export default function Kurtaset() {
                   </h3>
                   <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 inline-block mb-2">
                     <p className="text-white text-xl font-bold drop-shadow-lg">
-                      ₹{product.actualPrice}
+                     ₹{Math.round(product.actualPrice)}
                     </p>
                   </div>
                   <p className="text-white/90 text-sm font-medium drop-shadow-lg">

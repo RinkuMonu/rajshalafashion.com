@@ -429,7 +429,7 @@ const Arrivals = ({ addToCart }: { addToCart: (product: Product) => void }) => {
                                   className="text-xl font-bold"
                                   style={{ color: "#cba146" }}
                                 >
-                                  ₹{product.actualPrice}
+                                  ₹{Math.round(product.actualPrice)}
                                 </span>
                                 {product.price &&
                                   product.price !== product.actualPrice && (

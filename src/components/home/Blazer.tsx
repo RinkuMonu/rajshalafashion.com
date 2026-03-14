@@ -185,7 +185,7 @@ export default function Blazer() {
         {/* Price */}
         <div className="bg-white/25 backdrop-blur-md  rounded-xl px-4 py-1.5 shadow-lg">
           <p className="text-white text-xl font-extrabold tracking-wide">
-            ₹{product.actualPrice}
+       ₹{Math.round(product.actualPrice)}
           </p>
         </div>
 

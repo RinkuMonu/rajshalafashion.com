@@ -411,7 +411,7 @@ const TrendingProducts = ({ addToCart,}: { addToCart: (product: Product) => void
     <div className="flex items-center justify-between mt-3">
       <div className="flex items-center gap-2">
         <span className="text-xl font-bold text-[#cba146]">
-          ₹{product.actualPrice}
+         ₹{Math.round(product.actualPrice)}
         </span>
 
         {product.price &&

@@ -290,12 +290,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
                   className="text-lg font-bold"
                   style={{ color: "#cba146" }}
                 >
-                  ₹{ratedProduct.actualPrice.toLocaleString()}
+   ₹{Math.round(ratedProduct.actualPrice).toLocaleString()}
                 </span>
                 {ratedProduct.price &&
                   ratedProduct.price !== ratedProduct.actualPrice && (
                     <span className="text-sm text-gray-400 line-through hidden md:block">
-                      ₹{ratedProduct.price.toLocaleString()}
+                 ₹{Math.round(ratedProduct.price).toLocaleString()}
                     </span>
                   )}
               </div>

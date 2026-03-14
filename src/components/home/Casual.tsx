@@ -181,7 +181,7 @@ export default function Casual() {
 
     <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 inline-block mt-2">
       <p className="text-white text-base sm:text-lg font-bold">
-        ₹{product.actualPrice}
+       ₹{Math.round(product.actualPrice)}
       </p>
     </div>
 
